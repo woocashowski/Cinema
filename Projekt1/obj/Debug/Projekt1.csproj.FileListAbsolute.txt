@@ -1,0 +1,12 @@
+F:\Studia\MIASI\Projekt1\Projekt1\bin\Debug\Projekt1.exe.config
+F:\Studia\MIASI\Projekt1\Projekt1\bin\Debug\Projekt1.exe
+F:\Studia\MIASI\Projekt1\Projekt1\bin\Debug\Projekt1.pdb
+F:\Studia\MIASI\Projekt1\Projekt1\obj\Debug\Projekt1.csproj.AssemblyReference.cache
+F:\Studia\MIASI\Projekt1\Projekt1\obj\Debug\Projekt1.Properties.Resources.resources
+F:\Studia\MIASI\Projekt1\Projekt1\obj\Debug\Projekt1.csproj.GenerateResource.cache
+F:\Studia\MIASI\Projekt1\Projekt1\obj\Debug\Projekt1.csproj.CoreCompileInputs.cache
+F:\Studia\MIASI\Projekt1\Projekt1\obj\Debug\Projekt1.exe
+F:\Studia\MIASI\Projekt1\Projekt1\obj\Debug\Projekt1.pdb
+F:\Studia\MIASI\Projekt1\Projekt1\obj\Debug\Projekt1.LoginForm.resources
+F:\Studia\MIASI\Projekt1\Projekt1\obj\Debug\Projekt1.ReservationForm.resources
+F:\Studia\MIASI\Projekt1\Projekt1\obj\Debug\Projekt1.SignUpForm.resources
