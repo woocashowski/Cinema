@@ -16,5 +16,18 @@ namespace Projekt1
         {
             InitializeComponent();
         }
+
+        private void signinButton_Click(object sender, EventArgs e)
+        {
+            //string message = "Simple MessageBox";
+            //MessageBox.Show(message);
+
+            var frm = new ReservationForm();
+            frm.Location = this.Location;
+            frm.StartPosition = FormStartPosition.Manual;
+            frm.FormClosing += delegate { this.Show(); };
+            frm.Show();
+            this.Hide();
+        }
     }
 }

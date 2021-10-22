@@ -40,52 +40,59 @@ namespace Projekt1
             // 
             // signinButton
             // 
-            this.signinButton.Location = new System.Drawing.Point(352, 304);
+            this.signinButton.Location = new System.Drawing.Point(469, 374);
+            this.signinButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.signinButton.Name = "signinButton";
-            this.signinButton.Size = new System.Drawing.Size(75, 23);
+            this.signinButton.Size = new System.Drawing.Size(100, 28);
             this.signinButton.TabIndex = 0;
             this.signinButton.Text = "Sign in";
             this.signinButton.UseVisualStyleBackColor = true;
+            this.signinButton.Click += new System.EventHandler(this.signinButton_Click);
             // 
             // signUpButton
             // 
-            this.signUpButton.Location = new System.Drawing.Point(352, 333);
+            this.signUpButton.Location = new System.Drawing.Point(469, 410);
+            this.signUpButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.signUpButton.Name = "signUpButton";
-            this.signUpButton.Size = new System.Drawing.Size(75, 23);
+            this.signUpButton.Size = new System.Drawing.Size(100, 28);
             this.signUpButton.TabIndex = 1;
             this.signUpButton.Text = "Sign up";
             this.signUpButton.UseVisualStyleBackColor = true;
             // 
             // loginBox
             // 
-            this.loginBox.Location = new System.Drawing.Point(273, 111);
+            this.loginBox.Location = new System.Drawing.Point(364, 137);
+            this.loginBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.loginBox.Name = "loginBox";
-            this.loginBox.Size = new System.Drawing.Size(244, 20);
+            this.loginBox.Size = new System.Drawing.Size(324, 22);
             this.loginBox.TabIndex = 2;
             // 
             // PasswordBox
             // 
-            this.PasswordBox.Location = new System.Drawing.Point(273, 167);
+            this.PasswordBox.Location = new System.Drawing.Point(364, 206);
+            this.PasswordBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PasswordBox.Name = "PasswordBox";
             this.PasswordBox.PasswordChar = '*';
-            this.PasswordBox.Size = new System.Drawing.Size(244, 20);
+            this.PasswordBox.Size = new System.Drawing.Size(324, 22);
             this.PasswordBox.TabIndex = 3;
             // 
             // loginLabel
             // 
             this.loginLabel.AutoSize = true;
-            this.loginLabel.Location = new System.Drawing.Point(206, 114);
+            this.loginLabel.Location = new System.Drawing.Point(275, 140);
+            this.loginLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.loginLabel.Name = "loginLabel";
-            this.loginLabel.Size = new System.Drawing.Size(33, 13);
+            this.loginLabel.Size = new System.Drawing.Size(41, 16);
             this.loginLabel.TabIndex = 4;
             this.loginLabel.Text = "Login";
             // 
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(209, 173);
+            this.passwordLabel.Location = new System.Drawing.Point(279, 213);
+            this.passwordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(53, 13);
+            this.passwordLabel.Size = new System.Drawing.Size(68, 16);
             this.passwordLabel.TabIndex = 5;
             this.passwordLabel.Text = "Password";
             // 
@@ -93,18 +100,19 @@ namespace Projekt1
             // 
             this.errorLabel.AutoSize = true;
             this.errorLabel.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.errorLabel.Location = new System.Drawing.Point(367, 228);
+            this.errorLabel.Location = new System.Drawing.Point(489, 281);
+            this.errorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(29, 13);
+            this.errorLabel.Size = new System.Drawing.Size(37, 16);
             this.errorLabel.TabIndex = 6;
             this.errorLabel.Text = "Error";
             this.errorLabel.Visible = false;
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.loginLabel);
@@ -112,6 +120,7 @@ namespace Projekt1
             this.Controls.Add(this.loginBox);
             this.Controls.Add(this.signUpButton);
             this.Controls.Add(this.signinButton);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "LoginForm";
             this.Text = "Projekt_1";
             this.ResumeLayout(false);
