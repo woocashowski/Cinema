@@ -58,6 +58,7 @@ namespace Projekt1
             this.signUpButton.TabIndex = 1;
             this.signUpButton.Text = "Sign up";
             this.signUpButton.UseVisualStyleBackColor = true;
+            this.signUpButton.Click += new System.EventHandler(this.signUpButton_Click);
             // 
             // loginBox
             // 

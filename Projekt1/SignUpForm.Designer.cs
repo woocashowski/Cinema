@@ -45,73 +45,82 @@ namespace Projekt1
             // 
             // nameBox
             // 
-            this.nameBox.Location = new System.Drawing.Point(338, 64);
+            this.nameBox.Location = new System.Drawing.Point(451, 79);
+            this.nameBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(100, 20);
+            this.nameBox.Size = new System.Drawing.Size(132, 22);
             this.nameBox.TabIndex = 0;
             // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(279, 64);
+            this.nameLabel.Location = new System.Drawing.Point(372, 79);
+            this.nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(35, 13);
+            this.nameLabel.Size = new System.Drawing.Size(45, 16);
             this.nameLabel.TabIndex = 1;
             this.nameLabel.Text = "Name";
             // 
             // surnameLabel
             // 
             this.surnameLabel.AutoSize = true;
-            this.surnameLabel.Location = new System.Drawing.Point(279, 133);
+            this.surnameLabel.Location = new System.Drawing.Point(372, 164);
+            this.surnameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.surnameLabel.Name = "surnameLabel";
-            this.surnameLabel.Size = new System.Drawing.Size(49, 13);
+            this.surnameLabel.Size = new System.Drawing.Size(62, 16);
             this.surnameLabel.TabIndex = 2;
             this.surnameLabel.Text = "Surname";
             // 
             // loginLabel
             // 
             this.loginLabel.AutoSize = true;
-            this.loginLabel.Location = new System.Drawing.Point(279, 193);
+            this.loginLabel.Location = new System.Drawing.Point(372, 238);
+            this.loginLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.loginLabel.Name = "loginLabel";
-            this.loginLabel.Size = new System.Drawing.Size(33, 13);
+            this.loginLabel.Size = new System.Drawing.Size(41, 16);
             this.loginLabel.TabIndex = 3;
             this.loginLabel.Text = "Login";
             // 
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(279, 242);
+            this.passwordLabel.Location = new System.Drawing.Point(372, 298);
+            this.passwordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(53, 13);
+            this.passwordLabel.Size = new System.Drawing.Size(68, 16);
             this.passwordLabel.TabIndex = 4;
             this.passwordLabel.Text = "Password";
             // 
             // surnameBox
             // 
-            this.surnameBox.Location = new System.Drawing.Point(338, 133);
+            this.surnameBox.Location = new System.Drawing.Point(451, 164);
+            this.surnameBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.surnameBox.Name = "surnameBox";
-            this.surnameBox.Size = new System.Drawing.Size(100, 20);
+            this.surnameBox.Size = new System.Drawing.Size(132, 22);
             this.surnameBox.TabIndex = 5;
             // 
             // loginBox
             // 
-            this.loginBox.Location = new System.Drawing.Point(338, 193);
+            this.loginBox.Location = new System.Drawing.Point(451, 238);
+            this.loginBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.loginBox.Name = "loginBox";
-            this.loginBox.Size = new System.Drawing.Size(100, 20);
+            this.loginBox.Size = new System.Drawing.Size(132, 22);
             this.loginBox.TabIndex = 6;
             // 
             // passwordBox
             // 
-            this.passwordBox.Location = new System.Drawing.Point(338, 242);
+            this.passwordBox.Location = new System.Drawing.Point(451, 298);
+            this.passwordBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.passwordBox.Name = "passwordBox";
-            this.passwordBox.Size = new System.Drawing.Size(100, 20);
+            this.passwordBox.Size = new System.Drawing.Size(132, 22);
             this.passwordBox.TabIndex = 7;
             // 
             // signUpButton
             // 
-            this.signUpButton.Location = new System.Drawing.Point(338, 363);
+            this.signUpButton.Location = new System.Drawing.Point(451, 447);
+            this.signUpButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.signUpButton.Name = "signUpButton";
-            this.signUpButton.Size = new System.Drawing.Size(75, 23);
+            this.signUpButton.Size = new System.Drawing.Size(100, 28);
             this.signUpButton.TabIndex = 8;
             this.signUpButton.Text = "Sign Up";
             this.signUpButton.UseVisualStyleBackColor = true;
@@ -119,20 +128,23 @@ namespace Projekt1
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(25, 22);
+            this.backButton.Location = new System.Drawing.Point(33, 27);
+            this.backButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(75, 23);
+            this.backButton.Size = new System.Drawing.Size(100, 28);
             this.backButton.TabIndex = 9;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // errorLabel
             // 
             this.errorLabel.AutoSize = true;
             this.errorLabel.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.errorLabel.Location = new System.Drawing.Point(361, 321);
+            this.errorLabel.Location = new System.Drawing.Point(481, 395);
+            this.errorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(29, 13);
+            this.errorLabel.Size = new System.Drawing.Size(37, 16);
             this.errorLabel.TabIndex = 10;
             this.errorLabel.Text = "Error";
             this.errorLabel.Visible = false;
@@ -140,9 +152,10 @@ namespace Projekt1
             // workerCheckBox
             // 
             this.workerCheckBox.AutoSize = true;
-            this.workerCheckBox.Location = new System.Drawing.Point(338, 295);
+            this.workerCheckBox.Location = new System.Drawing.Point(451, 363);
+            this.workerCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.workerCheckBox.Name = "workerCheckBox";
-            this.workerCheckBox.Size = new System.Drawing.Size(61, 17);
+            this.workerCheckBox.Size = new System.Drawing.Size(71, 20);
             this.workerCheckBox.TabIndex = 11;
             this.workerCheckBox.Text = "Worker";
             this.workerCheckBox.UseVisualStyleBackColor = true;
@@ -150,9 +163,9 @@ namespace Projekt1
             // 
             // SignUpForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.workerCheckBox);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.backButton);
@@ -165,6 +178,7 @@ namespace Projekt1
             this.Controls.Add(this.surnameLabel);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.nameBox);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SignUpForm";
             this.Text = "SignUpForm";
             this.ResumeLayout(false);
