@@ -19,6 +19,7 @@ namespace Projekt1
             // gray - not avaible
             // orange - your choice
 
+            // Tu wczytujemy zajętość 
             foreach (var button in this.Controls.OfType<Button>())
             {
                 if (button.BackColor != Color.Orange)
