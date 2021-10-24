@@ -16,17 +16,11 @@ namespace Projekt1
         {
             InitializeComponent();
         }
-        private void GetRows()
-        {
-            // Get the DataTable of a DataSet.
-            DataTable table = users.Tables["Suppliers"];
-            DataRow[] rows = table.Select();
 
-            // Print the value one column of each DataRow.
-            for (int i = 0; i < rows.Length; i++)
-            {
-                Console.WriteLine(rows[i]["CompanyName"]);
-            }
+        private void add_User(string name, string login, string password, string surname, bool worker)
+        {
+            cinema_dbDataSet.usersDataTable users = new cinema_dbDataSet.usersDataTable();
+            users.AddusersRow(name, login, password, surname, worker);
         }
 
         private void signUpButton_Click(object sender, EventArgs e)
@@ -49,18 +43,7 @@ namespace Projekt1
                 length4 > 0)
             {
                 // Funkcja dodająca użytkownika do bazy
-                private void GetRows()
-{
-    // Get the DataTable of a DataSet.
-    DataTable table = DataSet1.Tables["Suppliers"];
-    DataRow[] rows = table.Select();
-
-    // Print the value one column of each DataRow.
-    for(int i = 0; i < rows.Length ; i++)
-    {
-        Console.WriteLine(rows[i]["CompanyName"]);
-    }
-}
+                add_User(name, login, password, surname, false);
                 MessageBox.Show("Rejestracja zakończona");
             }
             else
@@ -69,6 +52,9 @@ namespace Projekt1
             }
             
         }
+
+        
+
 
         private void backButton_Click(object sender, EventArgs e)
         {
