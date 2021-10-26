@@ -22,12 +22,23 @@ namespace Projekt1
             //string message = "Simple MessageBox";
             //MessageBox.Show(message);
 
-            var frm = new ReservationForm();
-            frm.Location = this.Location;
-            frm.StartPosition = FormStartPosition.Manual;
-            frm.FormClosing += delegate { this.Show(); };
-            frm.Show();
-            this.Hide();
+            //loginBox
+            string login = loginBox.Text;
+            string password = PasswordBox.Text;
+
+            cinema_dbDataSet.usersDataTable usersRows = new cinema_dbDataSet.usersDataTable();
+            DataRow user = usersRows.FindByIdentyfikator(1);
+            //MessageBox.Show();
+
+            if (true)
+            {
+                var frm = new ReservationForm();
+                frm.Location = this.Location;
+                frm.StartPosition = FormStartPosition.Manual;
+                frm.FormClosing += delegate { this.Show(); };
+                frm.Show();
+                this.Hide();
+            }
         }
 
         private void signUpButton_Click(object sender, EventArgs e)

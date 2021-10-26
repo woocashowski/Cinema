@@ -23,12 +23,30 @@ namespace Projekt1
             users.AddusersRow(name, login, password, surname, worker);
         }
 
+        static string Caesar(string value, int shift)
+        {
+            char[] buffer = value.ToCharArray();
+            for (int i = 0; i < buffer.Length; i++)
+            {
+                // Letter.
+                char letter = buffer[i];
+                // Add shift to all.
+                letter = (char)(letter + shift);
+                // Store.
+                buffer[i] = letter;
+            }
+            return new string(buffer);
+        }
+
+
         private void signUpButton_Click(object sender, EventArgs e)
         {
             string name = nameBox.Text;
             string surname = surnameBox.Text;
             string login = loginBox.Text;
             string password = passwordBox.Text;
+            password = Caesar(password, 1);
+            MessageBox.Show(password, Caesar(password, -1));
 
             int length1 = name.Length;
             int length2 = surname.Length;
@@ -43,12 +61,19 @@ namespace Projekt1
                 length4 > 0)
             {
                 // Funkcja dodająca użytkownika do bazy
-                add_User(name, login, password, surname, false);
+                cinema_dbDataSet.usersDataTable usersRows = new cinema_dbDataSet.usersDataTable();
+                //usersRows.AddusersRow(name, login, password, surname, false);
+                usersRows.AddusersRow("name", "login", "password", "surname", false);
+                cinema_dbDataSetTableAdapters.usersTableAdapter usersTableAdapter = new cinema_dbDataSetTableAdapters.usersTableAdapter();
+                usersTableAdapter.Update(usersRows);
+                Console.WriteLine(usersTableAdapter.GetData().Count);
+                Console.WriteLine("robię testa");
+
                 MessageBox.Show("Rejestracja zakończona");
             }
             else
             {
-                MessageBox.Show("Rejestracja nieudana");
+                //MessageBox.Show("Rejestracja nieudana");
             }
             
         }
