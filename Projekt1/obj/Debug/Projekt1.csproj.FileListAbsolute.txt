@@ -24,3 +24,4 @@ D:\Users\Łukasz\documents\GitHub\Cinema\Projekt1\obj\Debug\Projekt1.csproj.Core
 D:\Users\Łukasz\documents\GitHub\Cinema\Projekt1\obj\Debug\Projekt1.exe
 D:\Users\Łukasz\documents\GitHub\Cinema\Projekt1\obj\Debug\Projekt1.pdb
 D:\Users\Łukasz\documents\GitHub\Cinema\Projekt1\bin\Debug\cinema_db.accdb
+D:\Users\Łukasz\documents\GitHub\Cinema\Projekt1\obj\Debug\Projekt1.AdminForm.resources

@@ -17,10 +17,24 @@ namespace Projekt1
             InitializeComponent();
         }
 
+        // Decode passwords
+        static string Caesar(string value, int shift)
+        {
+            char[] buffer = value.ToCharArray();
+            for (int i = 0; i < buffer.Length; i++)
+            {
+                // Letter.
+                char letter = buffer[i];
+                // Add shift to all.
+                letter = (char)(letter + shift);
+                // Store.
+                buffer[i] = letter;
+            }
+            return new string(buffer);
+        }
+
         private void signinButton_Click(object sender, EventArgs e)
         {
-            //string message = "Simple MessageBox";
-            //MessageBox.Show(message);
 
             //loginBox
             string login = loginBox.Text;
@@ -28,9 +42,20 @@ namespace Projekt1
 
             cinema_dbDataSet.usersDataTable usersRows = new cinema_dbDataSet.usersDataTable();
             DataRow user = usersRows.FindByIdentyfikator(1);
+            Console.WriteLine(user);
+            Console.WriteLine("teeeest");
             //MessageBox.Show();
-
-            if (true)
+            bool isAdmin = true;
+            if (isAdmin)
+            {
+                var frm = new AdminForm();
+                frm.Location = this.Location;
+                frm.StartPosition = FormStartPosition.Manual;
+                frm.FormClosing += delegate { this.Show(); };
+                frm.Show();
+                this.Hide();
+            }
+            else
             {
                 var frm = new ReservationForm();
                 frm.Location = this.Location;
@@ -50,5 +75,7 @@ namespace Projekt1
             frm.Show();
             this.Hide();
         }
+
+        
     }
 }

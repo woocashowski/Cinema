@@ -17,12 +17,23 @@ namespace Projekt1
             InitializeComponent();
         }
 
+        public void newAdmin()
+        {
+            workerCheckBox.Checked = true;
+        }
+
+        public void newUser()
+        {
+            workerCheckBox.Checked = false;
+        }
+
         private void add_User(string name, string login, string password, string surname, bool worker)
         {
             cinema_dbDataSet.usersDataTable users = new cinema_dbDataSet.usersDataTable();
             users.AddusersRow(name, login, password, surname, worker);
         }
 
+        // Hide passwords
         static string Caesar(string value, int shift)
         {
             char[] buffer = value.ToCharArray();
@@ -46,7 +57,12 @@ namespace Projekt1
             string login = loginBox.Text;
             string password = passwordBox.Text;
             password = Caesar(password, 1);
-            MessageBox.Show(password, Caesar(password, -1));
+            bool isAdmin = false;
+            //workerCheckBox
+            //MessageBox.Show(password, Caesar(password, -1));
+            //workerCheckBox.Checked = true;
+            if (workerCheckBox.Checked == true) isAdmin = true;
+            
 
             int length1 = name.Length;
             int length2 = surname.Length;
@@ -63,17 +79,18 @@ namespace Projekt1
                 // Funkcja dodająca użytkownika do bazy
                 cinema_dbDataSet.usersDataTable usersRows = new cinema_dbDataSet.usersDataTable();
                 //usersRows.AddusersRow(name, login, password, surname, false);
-                usersRows.AddusersRow("name", "login", "password", "surname", false);
+                usersRows.AddusersRow(name, login, password, surname, isAdmin);
                 cinema_dbDataSetTableAdapters.usersTableAdapter usersTableAdapter = new cinema_dbDataSetTableAdapters.usersTableAdapter();
                 usersTableAdapter.Update(usersRows);
                 Console.WriteLine(usersTableAdapter.GetData().Count);
-                Console.WriteLine("robię testa");
 
+                Console.WriteLine("Użytkownik zarejestrowany", usersTableAdapter.GetData());
+                Console.WriteLine(isAdmin);
                 MessageBox.Show("Rejestracja zakończona");
             }
             else
             {
-                //MessageBox.Show("Rejestracja nieudana");
+                MessageBox.Show("Rejestracja nieudana");
             }
             
         }
@@ -83,12 +100,12 @@ namespace Projekt1
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            var frm = new LoginForm();
-            frm.Location = this.Location;
-            frm.StartPosition = FormStartPosition.Manual;
-            frm.FormClosing += delegate { this.Show(); };
-            frm.Show();
-            this.Hide();
+            this.Close();
         }
+
+        private void workerCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
     }
 }
