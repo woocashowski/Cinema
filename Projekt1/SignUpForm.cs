@@ -77,22 +77,38 @@ namespace Projekt1
                 length4 > 0)
             {
                 // Funkcja dodająca użytkownika do bazy
-                cinema_dbDataSet.usersDataTable usersRows = new cinema_dbDataSet.usersDataTable();
-                //usersRows.AddusersRow(name, login, password, surname, false);
-                usersRows.AddusersRow(name, login, password, surname, isAdmin);
-                cinema_dbDataSetTableAdapters.usersTableAdapter usersTableAdapter = new cinema_dbDataSetTableAdapters.usersTableAdapter();
-                usersTableAdapter.Update(usersRows);
-                Console.WriteLine(usersTableAdapter.GetData().Count);
 
-                Console.WriteLine("Użytkownik zarejestrowany", usersTableAdapter.GetData());
-                Console.WriteLine(isAdmin);
+                //bool loginIsFree = true;
+                Cinema_DB cinema = new Cinema_DB();
+                try
+                {
+                    User use = cinema.find_user_by_login(login);
+                    if(use.login == login)
+                    {
+                        //loginIsFree = false;
+                        MessageBox.Show("Rejestracja nieudana");
+                        goto notEnded;
+                    }
+                }
+                catch
+                {
+                    //loginIsFree = true;
+                }
+                User user = new User();
+                user.name = name;
+                user.surname = surname;
+                user.login = login;
+                user.password = password;
+                user.worker = isAdmin;
+                cinema.add_user(user);
+
                 MessageBox.Show("Rejestracja zakończona");
             }
             else
             {
                 MessageBox.Show("Rejestracja nieudana");
             }
-            
+        notEnded:;
         }
 
         

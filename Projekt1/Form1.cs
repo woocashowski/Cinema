@@ -40,12 +40,29 @@ namespace Projekt1
             string login = loginBox.Text;
             string password = PasswordBox.Text;
 
-            cinema_dbDataSet.usersDataTable usersRows = new cinema_dbDataSet.usersDataTable();
-            DataRow user = usersRows.FindByIdentyfikator(1);
-            Console.WriteLine(user);
-            Console.WriteLine("teeeest");
+            //cinema_dbDataSet.usersDataTable usersRows = new cinema_dbDataSet.usersDataTable();
+            //DataRow user = usersRows.FindByIdentyfikator(1);
+            //Console.WriteLine(user);
+            //Console.WriteLine("teeeest");
             //MessageBox.Show();
-            bool isAdmin = true;
+
+            Cinema_DB cinema = new Cinema_DB();
+            User use = cinema.find_user_by_login(login);
+            //User use = cinema.find_user_by_ID(1);
+            try
+            {
+                Console.WriteLine(use.login);
+                Console.WriteLine("pass " + use.password);
+                Console.WriteLine(use.id);
+                Console.WriteLine("pass2 " + password);
+                //if (password != use.password) goto End;
+            }
+            catch
+            {
+                goto End;
+            }
+
+            bool isAdmin = use.worker;
             if (isAdmin)
             {
                 var frm = new AdminForm();
@@ -64,6 +81,8 @@ namespace Projekt1
                 frm.Show();
                 this.Hide();
             }
+        End:;
+
         }
 
         private void signUpButton_Click(object sender, EventArgs e)
