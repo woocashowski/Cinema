@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
+//using System.Timers;
 
 namespace Projekt1
 {
     public partial class ReservationForm : Form
     {
+        private List<Movie> movies;
+
         public ReservationForm()
         {
             InitializeComponent();
@@ -31,13 +35,16 @@ namespace Projekt1
                     button.BackColor = Color.Green;
                 }
             }
-
+            Cinema_DB cinema = new Cinema_DB();
+            movies = cinema.read_Movies();
         }
 
         private void button_Click(string which)
         {
 
             Button button = new Button();
+
+            //progressBar1.Value = 900;
 
             if (which=="1")
             {
@@ -108,6 +115,13 @@ namespace Projekt1
             {
                 button.BackColor = Color.Green;
             }
+
+            //for (progressBar1.Value = 0; progressBar1.Value < 1000; progressBar1.Value += 2)
+            //{
+                //progressBar1.Value += 1;
+                //Console.WriteLine("Sleep for 0.1 seconds.");
+                //Thread.Sleep(1);
+            //}
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -183,6 +197,23 @@ namespace Projekt1
         private void button15_Click(object sender, EventArgs e)
         {
             button_Click("15");
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            button_Click("16");
+        }
+
+        private void movieComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cinema_DB cinema = new Cinema_DB();
+            movieComboBox.Items.Clear();
+            foreach(Movie movie in cinema.read_Movies())
+            {
+                movieComboBox.Items.Add(movie.title +  " " + movie.date.ToString());// " " + movie.date.ToString() +
+            }
+            //movieComboBox.Items = cinema.read_Movies();
+            //
         }
     }
 }

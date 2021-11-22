@@ -27,8 +27,8 @@ namespace Projekt1
         public void add_user(User user)
         {
 
-            OleDbCommand command = new OleDbCommand("INSERT INTO users (name, login, password, surname, worker) VALUES ('" + user.name + "', '" + user.login + "', '" + user.password + "', '" + user.surname + "', " + user.worker + ")", connection);
-            Console.WriteLine("INSERT INTO users (name, login, password, surname, worker) VALUES ('" + user.name + "', '" + user.login + "', '" + user.password + "', '" + user.surname + "', " + user.worker + ")", connection);
+            OleDbCommand command = new OleDbCommand("INSERT INTO users (name, login, [password], surname, worker) VALUES ('" + user.name + "', '" + user.login + "', '" + user.password + "', '" + user.surname + "', " + user.worker.ToString().ToLower() + ")", connection);
+            Console.WriteLine("INSERT INTO users (name, login, [password], surname, worker) VALUES ('" + user.name + "', '" + user.login + "', '" + user.password + "', '" + user.surname + "', " + user.worker.ToString().ToLower() + ")", connection);
 
             connection.Open();
             command.ExecuteNonQuery();
@@ -40,8 +40,9 @@ namespace Projekt1
         public void add_movie(Movie movie)
         {
             OleDbCommand command = new OleDbCommand("INSERT INTO movies (title, duration, [date], [time]) VALUES('" + movie.title + "', '" + movie.duration + "', '" + movie.date + "', '" + movie.time + "')", connection);
-            
-                connection.Open();
+            Console.WriteLine("INSERT INTO movies (title, duration, [date], [time]) VALUES('" + movie.title + "', '" + movie.duration + "', '" + movie.date + "', '" + movie.time + "')");
+
+            connection.Open();
                 command.ExecuteNonQuery();
                 connection.BeginTransaction().Commit();
                 connection.Close();

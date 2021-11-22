@@ -95,10 +95,10 @@ namespace Projekt1
                     //loginIsFree = true;
                 }
                 User user = new User();
-                user.name = name;
-                user.surname = surname;
-                user.login = login;
-                user.password = password;
+                user.name = name.ToString();
+                user.surname = surname.ToString();
+                user.login = login.ToString();
+                user.password = password.ToString();
                 user.worker = isAdmin;
                 cinema.add_user(user);
 
