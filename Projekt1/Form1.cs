@@ -39,7 +39,7 @@ namespace Projekt1
             //loginBox
             string login = loginBox.Text;
             string password = PasswordBox.Text;
-
+            password = Caesar(password, 1);
             //cinema_dbDataSet.usersDataTable usersRows = new cinema_dbDataSet.usersDataTable();
             //DataRow user = usersRows.FindByIdentyfikator(1);
             //Console.WriteLine(user);
@@ -80,6 +80,8 @@ namespace Projekt1
                 frm.FormClosing += delegate { this.Show(); };
                 frm.Show();
                 this.Hide();
+
+                frm.user_number(use.id);
             }
         End:;
 

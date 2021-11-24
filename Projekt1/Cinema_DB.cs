@@ -52,9 +52,9 @@ namespace Projekt1
 
         public void add_rezervation(Rezervation rezervation)
         {
-            OleDbCommand command = new OleDbCommand("INSERT INTO movies (place, movie, [user]) VALUES(" + rezervation.place.ToString() + ", " + rezervation.movie.ToString() + ", " + rezervation.user.ToString() + ")", connection);
-            
-                connection.Open();
+            OleDbCommand command = new OleDbCommand("INSERT INTO rezervation (place, movie, [user]) VALUES(" + rezervation.place.ToString() + ", " + rezervation.movie.ToString() + ", " + rezervation.user.ToString() + ")", connection);
+            Console.WriteLine("INSERT INTO movies (place, movie, [user]) VALUES(" + rezervation.place.ToString() + ", " + rezervation.movie.ToString() + ", " + rezervation.user.ToString() + ")");
+            connection.Open();
                 command.ExecuteNonQuery();
                 connection.BeginTransaction().Commit();
                 connection.Close();
@@ -109,7 +109,6 @@ namespace Projekt1
         {
             OleDbCommand command = new OleDbCommand("DELETE  FROM rezervation WHERE ID = " + id.ToString() + " ", connection);
 
-            connection.Open();
             connection.Open();
             command.ExecuteNonQuery();
             connection.BeginTransaction().Commit();
