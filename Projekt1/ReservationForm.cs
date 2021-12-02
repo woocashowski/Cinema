@@ -31,7 +31,7 @@ namespace Projekt1
             movieComboBox.Items.Clear();
             foreach (Movie movie in movies)
             {
-                movieComboBox.Items.Add(movie.id + "         " + movie.title + " " + movie.date.Substring(0, 10).ToString() + " " + movie.time.Substring(10));// " " + movie.date.ToString() +
+                movieComboBox.Items.Add(movie.id + ".         " + movie.title + " " + movie.date.Substring(0, 10).ToString() + " " + movie.time.Substring(10));// " " + movie.date.ToString() +
             }
 
             
@@ -46,6 +46,7 @@ namespace Projekt1
             // orange - your choice
 
             // Tu wczytujemy zajętość 
+           
             foreach (var button in this.Controls.OfType<Button>())
             {
                 button.BackColor = Color.Green;
@@ -176,9 +177,11 @@ namespace Projekt1
                 rezervation.user = Int32.Parse(label1.Text);
                 Console.WriteLine(rezervation.user);
 
+                Rezervation[] list_of_rezervations = cinema.find_rezervation_by_Movie(rezervation.movie);
+
                 int id_to_delete = new int();
 
-                foreach(Rezervation rez in rezervations)
+                foreach(Rezervation rez in list_of_rezervations)
                 {
                     Console.WriteLine
                         (
@@ -198,6 +201,7 @@ namespace Projekt1
                     }
                 }
 
+                //cinema.delete_Rezervation(which);
                 cinema.delete_Rezervation(id_to_delete);
                 //find_rezervation_by_Movie()
 
@@ -205,7 +209,9 @@ namespace Projekt1
                 taken.Remove(which);
             }
 
-            if (button16.BackColor == Color.Gray)
+            if (button16.BackColor == Color.Gray
+                &&
+                button.BackColor != Color.Gray)
             {
                 button16.BackColor = Color.Red;
             }
@@ -313,7 +319,14 @@ namespace Projekt1
             Cinema_DB cinema = new Cinema_DB();
             //Rezervation rezervation = new Rezervation();
             rezervations = cinema.read_Rezervation();
-            int k = movieComboBox.SelectedIndex + 1;
+
+            // Movie id:
+            //label2.Text = i.ToString();
+            string[] movie_number = movieComboBox.Text.Split('.');
+            Console.WriteLine("TTTT " + movie_number[0]);
+
+
+            int k = (int) Int64.Parse(movie_number[0]);
             Console.WriteLine("k: " + k.ToString());
 
             movie_selected = cinema.find_movie(k);
@@ -326,8 +339,8 @@ namespace Projekt1
                 }
                 movie_selected = cinema.find_movie(rezervation.movie);
             }
-
-            foreach(int el in seats)
+            movie_selected = cinema.find_movie(k);
+            foreach (int el in seats)
             {
                 seat_taken(el);
             }

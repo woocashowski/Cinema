@@ -177,6 +177,7 @@ namespace Projekt1
 
         public Movie find_movie(int id)
         {
+            Console.WriteLine("DB K:"+id.ToString());
             List<Movie> movies = read_Movies();
             var move = movies.Where(m => m.id == id)
                                              .Select(m => m);
