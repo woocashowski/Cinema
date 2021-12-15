@@ -55,7 +55,7 @@ namespace Projekt1
                 Console.WriteLine("pass " + use.password);
                 Console.WriteLine(use.id);
                 Console.WriteLine("pass2 " + password);
-                //if (password != use.password) goto End;
+                if (password != use.password) goto End;
             }
             catch
             {

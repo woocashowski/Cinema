@@ -427,5 +427,22 @@ namespace Projekt1
         {
             label1.Text = i.ToString();
         }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            if (button17.BackColor == Color.Red) goto dontDo;
+
+            var frm = new ChangeInfoForm();
+            frm.Location = this.Location;
+            frm.StartPosition = FormStartPosition.Manual;
+            frm.FormClosing += delegate { this.Show(); };
+            frm.Show();
+            frm.myLogin(Int32.Parse(label1.Text));
+
+            button17.BackColor = Color.Red;
+            this.Hide();
+        dontDo:;
+
+        }
     }
 }

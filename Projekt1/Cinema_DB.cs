@@ -86,7 +86,6 @@ namespace Projekt1
             OleDbCommand command = new OleDbCommand("DELETE  FROM users WHERE ID = "+id.ToString()+" ", connection);
 
             connection.Open();
-            connection.Open();
             command.ExecuteNonQuery();
             connection.BeginTransaction().Commit();
             connection.Close();
