@@ -76,6 +76,16 @@ namespace Projekt1
                 length3 > 0 &&
                 length4 > 0)
             {
+
+                if(length4 > 10 ||
+                    password.Any(char.IsDigit) == false ||
+                    password.Any(char.IsUpper) == false ||
+                    password.Any(char.IsLower) == false)
+                {
+                    MessageBox.Show("Hasło nie powinno być dłuższe niż 10 znaków, zawierać cyfrę oraz małą i dużą literę!");
+                    goto notEnded;
+                }
+
                 // Funkcja dodająca użytkownika do bazy
 
                 //bool loginIsFree = true;
@@ -86,7 +96,7 @@ namespace Projekt1
                     if(use.login == login)
                     {
                         //loginIsFree = false;
-                        MessageBox.Show("Rejestracja nieudana");
+                        MessageBox.Show("Rejestracja nieudana, login zajęty!");
                         goto notEnded;
                     }
                 }
